@@ -85,3 +85,10 @@ This file records material actions, decisions, evidence, and unresolved issues. 
 - Games Hub Pages run completed successfully: <https://github.com/minerclass/games-hub/actions/runs/29204469122>.
 - Live readback confirmed one unique "Play Answerable" link pointing to <https://minerclass.github.io/answerable/>.
 - Confirmed the featured heading, Answerable heading, technoskepticism language, zero console errors, and no horizontal overflow at 390px.
+
+## 2026-07-12 - Dissertation bridge
+
+- Added a debrief bridge with one game-specific prompt for each current research-question domain.
+- Did not copy the full research-question wording into the game; the card links to the current Dissertation Proposal Dashboard as the public source of truth.
+- Framed the prompts as connections to the proposed study, not as research findings.
+- Local validation confirmed one bridge, three prompts, the correct dashboard link, unique IDs, no horizontal overflow, and zero console errors.
