@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Answerable is a visual technology-ecology game for practicing the five technoskeptical questions in education.">
+  <meta name="theme-color" content="#102824">
+  <title>Answerable | A Technology Ecology Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the game</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Answerable home">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span><strong>Answerable</strong><small>Technology Ecology Game</small></span>
+    </a>
+    <nav aria-label="Related resources">
+      <a href="https://minerclass.github.io/technoskepticism-primer/">Primer</a>
+      <a href="https://minerclass.github.io/games-hub/">Games Hub</a>
+      <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false">Reduce motion</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="screen start-screen is-active" id="startScreen" aria-labelledby="heroTitle">
+      <div class="hero-art" role="img" aria-label="Illustrated cutaway school connected by data currents to a remote vendor cloud, with classrooms, families, educators, and district spaces visible as one system."></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content" id="top">
+        <p class="eyebrow">A visual technoskepticism simulation</p>
+        <h1 id="heroTitle">A tool enters.<br><em>The whole school changes.</em></h1>
+        <p class="hero-lede">Technology is never merely added. It redistributes attention, labor, power, access, and judgment. Use five lenses to make those changes visible before the decision becomes inevitable.</p>
+        <blockquote>Neither rejection nor surrender. Keep technological change answerable to human and educational purposes.</blockquote>
+        <div class="hero-actions">
+          <button class="primary-button" id="openBriefButton" type="button">Enter the deliberation</button>
+          <a class="text-link" href="https://minerclass.github.io/technoskepticism-primer/">Read the conceptual primer <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-facts" aria-label="Game details">
+          <span>12–15 minutes</span>
+          <span>Teacher PD &amp; leadership</span>
+          <span>No data collected</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen brief-screen" id="briefScreen" aria-labelledby="briefTitle" hidden>
+      <div class="brief-grid">
+        <div class="brief-copy">
+          <p class="eyebrow">Council briefing</p>
+          <h2 id="briefTitle">Choose the proposal entering your school.</h2>
+          <p>You are part of a Technology Deliberation Council. Your task is not to celebrate or condemn the proposal. Your task is to keep it answerable.</p>
+
+          <fieldset class="scenario-picker" id="scenarioPicker">
+            <legend>Technology proposal</legend>
+            <label class="scenario-option">
+              <input type="radio" name="scenario" value="writing" checked>
+              <span class="scenario-icon" aria-hidden="true">✎</span>
+              <span><strong>AI writing assistant</strong><small>Drafting, feedback, and revision support</small></span>
+            </label>
+            <label class="scenario-option">
+              <input type="radio" name="scenario" value="tutor">
+              <span class="scenario-icon" aria-hidden="true">◫</span>
+              <span><strong>Automated tutoring platform</strong><small>Personalized practice and feedback</small></span>
+            </label>
+            <label class="scenario-option">
+              <input type="radio" name="scenario" value="attendance">
+              <span class="scenario-icon" aria-hidden="true">◎</span>
+              <span><strong>Predictive attendance dashboard</strong><small>Early-warning risk identification</small></span>
+            </label>
+            <label class="scenario-option">
+              <input type="radio" name="scenario" value="phones">
+              <span class="scenario-icon" aria-hidden="true">▯</span>
+              <span><strong>Phone-management system</strong><small>Attention, storage, and enforcement</small></span>
+            </label>
+          </fieldset>
+        </div>
+
+        <aside class="purpose-card" aria-labelledby="purposeTitle">
+          <p class="card-kicker">Purpose charter</p>
+          <h3 id="purposeTitle">What must the proposal remain answerable to?</h3>
+          <p>Select exactly two purposes. They will stay visible throughout the simulation.</p>
+          <div class="purpose-options" id="purposeOptions">
+            <label><input type="checkbox" value="authorship"><span>Student authorship</span></label>
+            <label><input type="checkbox" value="access"><span>Equitable access</span></label>
+            <label><input type="checkbox" value="judgment"><span>Professional judgment</span></label>
+            <label><input type="checkbox" value="privacy"><span>Privacy &amp; dignity</span></label>
+            <label><input type="checkbox" value="connection"><span>Human connection</span></label>
+            <label><input type="checkbox" value="learning"><span>Durable learning</span></label>
+          </div>
+          <p class="selection-status" id="purposeStatus" aria-live="polite">Select two purposes to continue.</p>
+          <button class="primary-button" id="startGameButton" type="button" disabled>Convene the council</button>
+          <button class="quiet-button" id="backToHeroButton" type="button">Back</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="screen game-screen" id="gameScreen" aria-labelledby="gameHeading" hidden>
+      <div class="game-header">
+        <div>
+          <p class="eyebrow" id="scenarioEyebrow">Proposal under review</p>
+          <h2 id="gameHeading">AI writing assistant</h2>
+        </div>
+        <div class="purpose-ribbon" aria-label="Selected human purposes">
+          <span>Answerable to</span>
+          <strong id="purposeRibbon">Student authorship · Durable learning</strong>
+        </div>
+      </div>
+
+      <ol class="lens-progress" id="lensProgress" aria-label="Technoskeptical question progress">
+        <li class="is-current" aria-current="step"><span>1</span><b>The Price</b><small>What is given up?</small></li>
+        <li><span>2</span><b>The Distribution</b><small>Who gains or carries burdens?</small></li>
+        <li><span>3</span><b>The Demands</b><small>What does it require?</small></li>
+        <li><span>4</span><b>The Ripples</b><small>What changes follow?</small></li>
+        <li><span>5</span><b>The Myth</b><small>What became inevitable?</small></li>
+      </ol>
+
+      <div class="game-layout">
+        <section class="ecosystem-panel" aria-labelledby="ecosystemTitle">
+          <div class="panel-heading">
+            <div>
+              <p class="card-kicker">Live system view</p>
+              <h3 id="ecosystemTitle">School technology ecology</h3>
+            </div>
+            <div class="view-legend" id="viewLegend">Price lens active</div>
+          </div>
+
+          <div class="ecosystem" id="ecosystem" data-lens="price">
+            <svg class="connection-layer" viewBox="0 0 900 560" aria-hidden="true" preserveAspectRatio="none">
+              <path class="connection human" data-edge="learner-teacher" d="M190 295 C285 225 330 225 400 250"></path>
+              <path class="connection human" data-edge="teacher-curriculum" d="M435 240 C520 170 570 160 650 165"></path>
+              <path class="connection community" data-edge="learner-family" d="M175 310 C125 365 135 420 220 450"></path>
+              <path class="connection governance" data-edge="teacher-district" d="M450 265 C545 315 600 340 700 350"></path>
+              <path class="connection data" data-edge="learner-vendor" d="M190 280 C350 70 590 55 790 95"></path>
+              <path class="connection data" data-edge="teacher-vendor" d="M440 230 C560 115 650 90 790 95"></path>
+              <path class="connection data" data-edge="district-vendor" d="M720 335 C790 275 800 195 790 115"></path>
+              <path class="connection assessment" data-edge="curriculum-assessment" d="M665 185 C650 250 650 290 670 345"></path>
+              <path class="connection assessment" data-edge="learner-assessment" d="M205 300 C370 390 500 395 650 365"></path>
+            </svg>
+
+            <button class="eco-node learners" type="button" data-node="learners" aria-pressed="false">
+              <span class="node-icon" aria-hidden="true">● ● ●</span><strong>Learners</strong><small id="nodeLearners">Writing, thinking, belonging</small>
+            </button>
+            <button class="eco-node educators" type="button" data-node="educators" aria-pressed="false">
+              <span class="node-icon" aria-hidden="true">◆</span><strong>Educators</strong><small id="nodeEducators">Feedback, design, judgment</small>
+            </button>
+            <button class="eco-node families" type="button" data-node="families" aria-pressed="false">
+              <span class="node-icon" aria-hidden="true">⌂</span><strong>Families</strong><small id="nodeFamilies">Trust, access, context</small>
+            </button>
+            <button class="eco-node curriculum" type="button" data-node="curriculum" aria-pressed="false">
+              <span class="node-icon" aria-hidden="true">▤</span><strong>Curriculum</strong><small id="nodeCurriculum">What counts as learning</small>
+            </button>
+            <button class="eco-node assessment" type="button" data-node="assessment" aria-pressed="false">
+              <span class="node-icon" aria-hidden="true">◇</span><strong>Assessment</strong><small id="nodeAssessment">What becomes visible</small>
+            </button>
+            <button class="eco-node district" type="button" data-node="district" aria-pressed="false">
+              <span class="node-icon" aria-hidden="true">▦</span><strong>District</strong><small id="nodeDistrict">Policy, capacity, accountability</small>
+            </button>
+            <button class="eco-node vendor" type="button" data-node="vendor" aria-pressed="false">
+              <span class="node-icon" aria-hidden="true">☁</span><strong>Vendor</strong><small id="nodeVendor">Platform, contract, data</small>
+            </button>
+            <div class="proposal-core" id="proposalCore" aria-label="Technology proposal at the center of the system">
+              <span class="core-orbit" aria-hidden="true"></span>
+              <span class="core-symbol" aria-hidden="true">✦</span>
+              <strong id="coreTitle">AI writing assistant</strong>
+              <small id="corePurpose">Drafting and revision feedback</small>
+            </div>
+
+            <div class="system-pulse" id="systemPulse" aria-hidden="true"></div>
+          </div>
+
+          <div class="system-readout" id="systemReadout" role="status" aria-live="polite">
+            Select a reveal point to inspect how the proposal changes the system.
+          </div>
+
+          <details class="structured-view">
+            <summary>Read the system as a structured list</summary>
+            <div id="structuredSystem"></div>
+          </details>
+        </section>
+
+        <aside class="lens-panel" aria-labelledby="lensTitle">
+          <div class="lens-number" id="lensNumber" aria-hidden="true">01</div>
+          <p class="card-kicker" id="lensKicker">The Price Lens</p>
+          <h3 id="lensTitle">What does society give up for the benefits of the technology?</h3>
+          <p class="lens-root" id="lensRoot">Every technology is a trade-off. Some of what disappears may have been the site of learning.</p>
+          <div class="lens-workbench" id="lensWorkbench"></div>
+          <div class="lens-feedback" id="lensFeedback" aria-live="polite"></div>
+          <button class="primary-button next-lens" id="nextLensButton" type="button" disabled>Continue to the Distribution Lens</button>
+        </aside>
+      </div>
+
+      <section class="evidence-drawer" aria-labelledby="evidenceTitle">
+        <div>
+          <p class="card-kicker">Council evidence</p>
+          <h3 id="evidenceTitle">What the five lenses have made visible</h3>
+        </div>
+        <ul class="evidence-tokens" id="evidenceTokens">
+          <li data-token="price"><span>1</span>Price named</li>
+          <li data-token="distribution"><span>2</span>Distribution mapped</li>
+          <li data-token="demands"><span>3</span>Dependencies bounded</li>
+          <li data-token="ripples"><span>4</span>Ripples anticipated</li>
+          <li data-token="myth"><span>5</span>Alternatives imagined</li>
+        </ul>
+      </section>
+    </section>
+
+    <section class="screen council-screen" id="councilScreen" aria-labelledby="councilTitle" hidden>
+      <div class="council-layout">
+        <div>
+          <p class="eyebrow">Final deliberation</p>
+          <h2 id="councilTitle">The technology is no longer inevitable.</h2>
+          <p class="council-lede">The five questions have reopened the decision. Choose the posture that best reflects the evidence you collected—not your enthusiasm or fear.</p>
+          <div class="decision-grid" id="decisionGrid" role="radiogroup" aria-label="Council decision">
+            <button type="button" role="radio" aria-checked="false" data-decision="adopt"><span>01</span><strong>Adopt</strong><small>The benefits are compelling and the current conditions are sufficient.</small></button>
+            <button type="button" role="radio" aria-checked="false" data-decision="pilot"><span>02</span><strong>Pilot with conditions</strong><small>Test a bounded use with evidence, safeguards, and a stopping rule.</small></button>
+            <button type="button" role="radio" aria-checked="false" data-decision="redesign"><span>03</span><strong>Redesign</strong><small>Change the proposal before introducing it into the system.</small></button>
+            <button type="button" role="radio" aria-checked="false" data-decision="alternative"><span>04</span><strong>Use an alternative</strong><small>Address the purpose through a lower-technology or organizational approach.</small></button>
+            <button type="button" role="radio" aria-checked="false" data-decision="decline"><span>05</span><strong>Decline for now</strong><small>The burdens or dependencies exceed what the institution can govern responsibly.</small></button>
+          </div>
+        </div>
+
+        <aside class="conditions-card" aria-labelledby="conditionsTitle">
+          <p class="card-kicker">Conditions of answerability</p>
+          <h3 id="conditionsTitle">Choose three conditions that make your decision accountable.</h3>
+          <div class="condition-options" id="conditionOptions"></div>
+          <p class="selection-status" id="conditionStatus" aria-live="polite">Choose a decision and three conditions.</p>
+          <button class="primary-button" id="generateCharterButton" type="button" disabled>Generate Answerability Charter</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="screen debrief-screen" id="debriefScreen" aria-labelledby="debriefTitle" hidden>
+      <div class="debrief-heading">
+        <p class="eyebrow">Deliberation complete</p>
+        <h2 id="debriefTitle">Your Answerability Charter</h2>
+        <p>You did not produce a universal verdict. You produced a public rationale that can be questioned, monitored, and revised.</p>
+      </div>
+
+      <div class="debrief-grid">
+        <article class="charter-card" id="charterCard" aria-labelledby="charterTitle">
+          <div class="charter-topline"><span>Technology Deliberation Council</span><span id="charterDate">2026</span></div>
+          <h3 id="charterTitle">Answerability Charter</h3>
+          <div id="charterContent"></div>
+          <p class="charter-disclaimer"><strong>Teaching note:</strong> This charter and its indicators are illustrative. They are not validated assessment results, research findings, legal advice, or endorsed district policy.</p>
+        </article>
+
+        <aside class="debrief-side">
+          <section class="reflection-card">
+            <p class="card-kicker">What changed?</p>
+            <h3>From verdict to accountable inquiry</h3>
+            <p>Technoskepticism did not tell you whether to accept or reject the technology. It made the trade-offs, distributions, dependencies, ripples, and alternatives available for deliberation.</p>
+          </section>
+          <section class="copy-card">
+            <label for="charterText"><strong>Portable charter text</strong></label>
+            <textarea id="charterText" rows="12" readonly></textarea>
+            <button class="secondary-button" id="copyCharterButton" type="button">Copy charter</button>
+            <p id="copyStatus" class="copy-status" aria-live="polite"></p>
+          </section>
+          <div class="debrief-actions">
+            <button class="primary-button" id="replayButton" type="button">Review another proposal</button>
+            <a class="secondary-button" href="https://minerclass.github.io/technoskepticism-primer/">Return to the primer</a>
+            <a class="quiet-link" href="https://minerclass.github.io/games-hub/">Back to the Games Hub</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Answerable</strong> · A public learning game by Micah J. Miner</p>
+    <p>Grounded in Postman, the Civics of Technology technoskeptical questions, and the Pedagogical Friction Framework.</p>
+  </footer>
+
+  <div class="announcer" id="announcer" aria-live="assertive" aria-atomic="true"></div>
+  <script src="game.js"></script>
+</body>
+</html>
