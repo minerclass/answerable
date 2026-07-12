@@ -57,3 +57,31 @@ This file records material actions, decisions, evidence, and unresolved issues. 
 - Verify phone-width, keyboard, and reduced-motion behavior.
 - Verify Games Hub integration and public deployment.
 
+
+## 2026-07-12 - Publication and HTTPS validation
+
+- Created public repository: <https://github.com/minerclass/answerable>.
+- Enabled GitHub Pages from `main` at <https://minerclass.github.io/answerable/>.
+- Initial Pages deployment completed successfully for commit `b339754`.
+- Confirmed live title, hero artwork, primer link, Games Hub link, and zero console errors.
+- Completed the full AI-writing path through all five lenses.
+- Generated a charter using **Pilot with conditions** and three explicit governance conditions.
+- Verified charter content, teaching disclaimer, and the no-storage announcement.
+- Clipboard permission was unavailable in the browser harness; the documented select-text fallback activated correctly.
+- Verified replay returns to a clean proposal briefing and resets the purpose charter.
+- Entered the Predictive Attendance scenario with Privacy & Dignity and Professional Judgment purposes.
+- Completed its scenario-specific Price Lens and confirmed zero console errors.
+- At a 390px viewport, the browser reported a 375px document width, no horizontal overflow, and a 337.9px ecosystem board.
+- Verified reduced-motion state changes to `aria-pressed="true"` and the body receives the `reduce-motion` class.
+- Confirmed 62 unique interface IDs and no duplicate IDs.
+- Confirmed no analytics, storage APIs, external scripts, or external stylesheets.
+
+## 2026-07-12 - Games Hub integration
+
+- Added Answerable as the third featured visual simulation in a clean Games Hub checkout.
+- Updated the hub description to name technoskepticism.
+- Updated the README and catalog count to 14 experiences.
+- Published Games Hub commit `da1a82c`; live deployment verification follows in the final handoff update.
+- Games Hub Pages run completed successfully: <https://github.com/minerclass/games-hub/actions/runs/29204469122>.
+- Live readback confirmed one unique "Play Answerable" link pointing to <https://minerclass.github.io/answerable/>.
+- Confirmed the featured heading, Answerable heading, technoskepticism language, zero console errors, and no horizontal overflow at 390px.

@@ -1,7 +1,7 @@
 # Continuation Handoff — Answerable
 
 **Updated:** July 12, 2026  
-**Status:** Core game implemented; publication and final HTTPS validation pending.  
+**Status:** Complete, published, and live-verified.  
 **Project folder:** `C:\Users\mminer\OneDrive - bpd3.org\Documents\New project 2\answerable-game-build-20260712\answerable`
 
 ## Objective
@@ -33,17 +33,9 @@ Finish, publish, and verify **Answerable**, a visual technology-ecology game tea
 - Ripple time slider reaches the one-year state and reveals response options.
 - No console errors were observed during the completed local path.
 
-## Immediate next actions
+## Maintenance state
 
-1. Run `node --check game.js` and repository hygiene checks.
-2. Initialize or inspect Git and create the public `minerclass/answerable` repository.
-3. Publish GitHub Pages from `main`.
-4. Complete an AI-writing playthrough on HTTPS: Myth Lens, council, charter, copy, and replay.
-5. Exercise a contrasting Predictive Attendance or Phone Management path.
-6. Test 390px width, keyboard operation, and reduced motion.
-7. Add Answerable to the clean Games Hub checkout at `..\games-hub`.
-8. Publish and verify the Games Hub update.
-9. Record exact evidence, commits, and deployment state in `AUDIT_TRAIL.md`, `BUILD_LOG.md`, and this handoff.
+No required implementation work remains. Future work should be treated as a new scoped phase. Reasonable extensions include a facilitator mode, additional governance scenarios, or a printable charter export, but none is required for the current release.
 
 ## High-risk areas
 
@@ -63,10 +55,11 @@ Finish, publish, and verify **Answerable**, a visual technology-ecology game tea
 
 ## Completion definition
 
-- Public game deployed and fully playable.
-- Four scenarios load.
-- One primary and one contrasting path verified.
-- Keyboard, mobile, reduced-motion, replay, and copy behavior verified.
-- Games Hub updated and live.
-- Repository clean with audit and handoff records finalized.
+- [x] Public game deployed and fully playable.
+- [x] Four scenarios represented in the public briefing.
+- [x] One full primary path and one contrasting branch verified.
+- [x] Mobile, reduced-motion, replay, and copy fallback verified.
+- [x] Games Hub updated and pushed.
+- [x] Games Hub final public readback.
+- [x] Repository documentation finalized; confirm clean state after committing this update.
 

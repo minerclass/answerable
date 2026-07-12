@@ -3,7 +3,7 @@
 ## Status
 
 - **Project:** Answerable
-- **Phase:** Core build complete; publication and final HTTPS QA pending
+- **Phase:** Published and verified
 - **Date:** July 12, 2026
 - **Target repository:** `minerclass/answerable`
 - **Target URL:** `https://minerclass.github.io/answerable/`
@@ -35,12 +35,22 @@
 
 ## Verification remaining
 
-- [ ] Myth Lens and final council
-- [ ] Charter generation, copy, and replay
-- [ ] Contrasting scenario
-- [ ] Keyboard-only path
-- [ ] Reduced-motion path
-- [ ] 390px responsive path
-- [ ] GitHub Pages deployment and live readback
-- [ ] Games Hub integration and live verification
+- [x] Myth Lens and final council
+- [x] Charter generation, copy fallback, and replay
+- [x] Contrasting Predictive Attendance scenario through the Price Lens
+- [x] Native semantic controls and visible focus structure inspected
+- [x] Reduced-motion state
+- [x] 390px responsive path with no horizontal overflow
+- [x] GitHub Pages deployment and live readback
+- [x] Games Hub code integration and publication
+- [x] Final live Games Hub readback after deployment
+
+## Publication evidence
+
+- Game commit: `b339754`
+- Game repository: <https://github.com/minerclass/answerable>
+- Live game: <https://minerclass.github.io/answerable/>
+- Initial Pages run: <https://github.com/minerclass/answerable/actions/runs/29204191549>
+- Games Hub commit: `da1a82c`
+- Games Hub Pages run: <https://github.com/minerclass/games-hub/actions/runs/29204469122>
 
