@@ -1,8 +1,12 @@
 :root {
+  /* Note the inverted names here: --ink is the BACKGROUND and --paper is the
+     TEXT. Only the text joins the shared ink. The dark green ground is kept
+     local because it is this simulator's ecology theme, not a neutral surface. */
   --ink: #102824;
   --ink-2: #173832;
   --ink-3: #215047;
-  --paper: #f3ebdc;
+  --paper: var(--mjm-ink, #f3ebdc);
+  --mjm-accent: var(--mjm-teal, #55b7aa);
   --paper-2: #e6d9c2;
   --paper-3: #d2c09f;
   --copper: #c87b4c;
